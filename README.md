@@ -43,23 +43,27 @@ This is achieved by the following configuration:
   },
   // We only add the types folder and not the edgeql-js folder here!
   "include": ["./src/**/*.ts", "./dbschema/types/*.ts"],
-  // Maybe we want to include this in the future, we are very restrictive here
   "exclude": ["node_modules/edgedb"]
 }
 ```
 
 ### .vscode/settings.json
 
-We prevent Intellisense from showing us imports from the edgeql-js and edgedb packages.
-
 ```json
 {
   "typescript.preferences.autoImportFileExcludePatterns": [
+    // We prevent Intellisense from showing us imports from the edgeql-js and edgedb packages.
     "./dbschema/edgeql-js/**",
     "./node_modules/edgedb/**"
   ]
 }
 ```
+
+## Notes
+
+This setup is very restrictive. Imports of excluded folders are still possible, but the setup aims to have all these imports gathered in `./dbschema/types/exports.ts` to make it a single source from which we export more generic types of the query builder or edgedb package.
+
+There are helper functions in `./dbschema/types/helper.ts` that utilize work with the edgedb types.
 
 ## Examples
 
