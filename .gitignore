@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 dbschema/edgeql-js/
+dbschema/types/generated.ts
+dbschema/types/interfaces.ts
