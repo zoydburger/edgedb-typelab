@@ -1,0 +1,22 @@
+{
+  "name": "edgedb-typelab",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "copy-toml-v5": "rm -f edgedb.toml && cp edgedb.v5.toml edgedb.toml",
+    "copy-toml-v6": "rm -f edgedb.toml && cp edgedb.v6.toml edgedb.toml",
+    "destroy": "edgedb instance destroy -I edgedb_typelab --force || true",
+    "init": "npm run destroy && edgedb project init --non-interactive",
+    "generate": "npx @edgedb/generate edgeql-js -I edgedb_typelab && npx @edgedb/generate interfaces -I edgedb_typelab --file dbschema/edgeql-js/modules/interfaces.ts"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2"
+  },
+  "dependencies": {
+    "@edgedb/generate": "^0.5.6",
+    "edgedb": "^1.5.12",
+    "zod": "^3.24.2"
+  }
+}
