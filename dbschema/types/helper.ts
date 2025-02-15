@@ -1,7 +1,6 @@
 import { EnumType } from "edgeql-lib/reflection";
 import { helper } from "./interfaces";
 import { type $infer } from "edgeql-lib/syntax";
-import * as lib from "edgeql-lib/typesystem";
 import { BaseType, Cardinality, TypeSet } from "./exports";
 
 function Enum<T extends readonly string[]>(

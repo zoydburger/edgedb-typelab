@@ -1,5 +1,5 @@
 import { User } from "edgeql-types/interfaces";
-import { db, runQuery } from "./edgedb";
+import { db, runQuery } from "~/edgedb";
 import { Infer } from "edgeql-types/helper";
 
 type UserCreateData = Pick<User, "username" | "email">;
@@ -17,4 +17,5 @@ function createUser(user: UserCreateData) {
 // We can infer the type of the object that gets returned, when the query is executed
 type InferredWithHelperFunction = Infer<ReturnType<typeof createUser>>;
 
+// The generically typed runQuery function also correctly infers the return type
 const user = runQuery(createUser(exampleUser));

@@ -26,6 +26,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["./src/**/*.ts", "dbschema/types/*.ts"],
-  "exclude": ["./dbschema/edgeql-js/modules/default"]
+  "include": ["./src/**/*.ts", "./dbschema/types/*.ts"],
+  "exclude": ["node_modules/edgedb"]
 }

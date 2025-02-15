@@ -1,7 +1,7 @@
 import { USER_STATUS, UserStatusValues } from "edgeql-types/generated";
 import { Fields, Links, Props } from "edgeql-types/helper";
 import { User, UserStatus } from "edgeql-types/interfaces";
-import { db } from "./edgedb";
+import { db } from "~/edgedb";
 
 // Type examples
 type MyInterface = User; // This does not resolve the symbol, points to $default.User
